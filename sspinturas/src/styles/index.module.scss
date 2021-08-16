@@ -1,0 +1,90 @@
+/* ---------logo----------------- */
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  max-width: 9.375rem;
+  max-height: 6.25rem;
+  width: auto;
+  height: auto;
+}
+
+.logo-alt {
+  display: flex;
+  align-items: center;
+  max-width: 14.625rem;
+  max-height: 11.25rem;
+  width: auto;
+  height: auto;
+}
+/* ---------layout----------------- */
+.container {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.grid {
+  display: grid;
+  gap: 2rem;
+}
+
+// header
+
+.headerContainer {
+  margin-left: 1.5rem;
+  margin-right: 1.5rem;
+}
+
+.headerContent {
+  nav {
+    height: var(--header-height);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+
+    ul li {
+      text-align: center;
+
+      a {
+        transition: color 0.3s;
+        position: relative;
+      }
+
+      a:hover,
+      a.active {
+        color: var(--base-color);
+      }
+
+      a::after {
+        content: "";
+        width: 0;
+        height: 2px;
+        background: var(--base-color);
+
+        position: absolute;
+        left: 0;
+        bottom: -1.5rem;
+
+        transition: width 0.2s;
+      }
+
+      a:hover::after,
+      a.active::after {
+        width: 100%;
+      }
+    }
+
+    div {
+      opacity: 0;
+      visibility: hidden;
+      top: -20rem;
+      transition: 0.2s;
+
+      ul {
+        display: none;
+      }
+    }
+  }
+}
